@@ -6,8 +6,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'K.C. Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  tagline: 'Terraform + ArgoCD 的 GitOps 基礎架構實作紀錄',
+
+  favicon: 'img/favicon.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -15,24 +16,22 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://kittychen913.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/gitops-demo-docs/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'KittyChen913', // Usually your GitHub org/user name.
+  projectName: 'gitops-demo-docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // 站上內容為繁體中文，需正確輸出 <html lang="zh-Hant">，
+  // 否則影響 SEO、螢幕閱讀器發音，瀏覽器也會一直跳出翻譯提示。
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hant',
+    locales: ['zh-Hant'],
   },
 
   plugins: ['docusaurus-plugin-image-zoom'],
@@ -43,26 +42,11 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          //   'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl:
+            'https://github.com/KittyChen913/gitops-demo-docs/tree/master/',
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   feedOptions: {
-        //     type: ['rss', 'atom'],
-        //     xslt: true,
-        //   },
-        //   // Please change this to your repo.
-        //   // Remove this to remove the "edit this page" links.
-        //   editUrl:
-        //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        //   // Useful options to enforce blogging best practices
-        //   onInlineTags: 'warn',
-        //   onInlineAuthors: 'warn',
-        //   onUntruncatedBlogPosts: 'warn',
-        // },
+        // 註解掉不等於停用，會套用預設值並產生空的 /blog 頁面，需顯式關閉。
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -71,8 +55,9 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    // 社群平台分享預覽圖。Docusaurus 會自動補上 url + baseUrl 組成絕對網址。
+    // 注意：多數平台以 1200x630 橫式呈現，此為 500x500 方形圖，兩側會被裁切。
+    image: 'img/kc-avatar.png',
     colorMode: {
       defaultMode: 'dark',
       disableSwitch: true,
@@ -81,8 +66,8 @@ const config: Config = {
     navbar: {
       title: 'GitOps Demo',
       logo: {
-        alt: 'K.C. Site Logo',
-        src: 'https://docusaurus.io/img/docusaurus_keytar.svg',
+        alt: 'Kitty Chen (K.C.)',
+        src: 'img/logo.png',
       },
       items: [
         {
@@ -91,7 +76,6 @@ const config: Config = {
           position: 'left',
           label: 'Docs',
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/KittyChen913/gitops-demo-docs',
           label: 'GitHub',
