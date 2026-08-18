@@ -193,5 +193,13 @@ OpenVPN Server 剛部屬好時，無自動提供可用的 VPN Client User，需�
   src={require('./images/openvpn-client-connect-success.png').default}
   alt="OpenVPN Client 顯示連線成功狀態"
   width="40%"
-  style={{ marginBottom: '30px' }}
+  style={{ marginBottom: '50px' }}
 />
+
+## 離場清理
+
+<br />
+
+做完 OpenVPN Admin UI 的設置後，記得移除 Linode 上本次建立的 Firewall rule。
+
+<br />
