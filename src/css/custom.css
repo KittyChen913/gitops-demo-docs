@@ -29,6 +29,12 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+/* navbar logo 圓形化 */
+.navbar__logo {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
 /* cluster 拆分 */
 .cluster-table table {
   width: 100%;
@@ -37,17 +43,22 @@
 
 .cluster-table th:nth-child(1),
 .cluster-table td:nth-child(1) {
-  width: 24%;
+  width: 26%;
 }
 
 .cluster-table th:nth-child(2),
 .cluster-table td:nth-child(2) {
-  width: 28%;
+  width: 30%;
 }
 
 .cluster-table th:nth-child(3),
 .cluster-table td:nth-child(3) {
-  width: 48%;
+  width: 41%;
+}
+
+.cluster-table th:nth-child(4),
+.cluster-table td:nth-child(4) {
+  width: 3%;
 }
 
 /* cloud 選擇 */
