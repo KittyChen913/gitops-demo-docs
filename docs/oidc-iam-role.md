@@ -450,11 +450,8 @@ import TabItem from '@theme/TabItem';
 }
 ```
 
-
   </TabItem>
 </Tabs>
-
-
 
   </TabItem>
 </Tabs>

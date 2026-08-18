@@ -23,10 +23,7 @@ sidebar_position: 6
   style={{ marginBottom: '40px', marginTop: '30px' }}
 />
 
-
 在 `openvpn-dns` 專案中，特別增設了 2 個 VPN Client `ci-cluster` & `ci-argocd`，各自用在不同 repo 中，在增設 Firewall 後還有其他 CI/CD Job 需為資源做其他設置的用途。
-
-
 
 :::info
 我想這種問題也跟 repo 拆分、Workflow Job 拆分、Workflow 順序編排有關，如果要在設置 Firewall 前把所有動作在一個 Job 一次做完，或是不要拆分那麼多個 repo 分別對同資源做事，也可以不用做這種設定，只是全部放在一起 code 有點難看就是了。

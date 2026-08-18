@@ -28,7 +28,6 @@ sidebar_position: 7
 
 ## Frontend External DNS
 
-
 <img
   src={require('./images/external-dns-frontend.png').default}
   alt="External DNS"
@@ -38,7 +37,6 @@ sidebar_position: 7
 
 如果要使用 External 公開的 DNS，Linode 有提供 DNS Server 可以使用，但因為 Domain 要花錢購買 💰，我沒買。
 
-
 <img
   src={require('./images/hosts-dns-frontend.png').default}
   alt="hosts DNS"
@@ -47,11 +45,3 @@ sidebar_position: 7
 />
 
 所以這專案實際的架構是這張，這裡我只 Public IP，在 Windows 中設定 hosts 來測試用 Domain 訪問。
-
-
-
-
-
-
-
-

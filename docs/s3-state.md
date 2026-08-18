@@ -30,7 +30,6 @@ sidebar_position: 12
          └─ 📄 terraform.tfstate
 ```
 
-
 ## State 對應表
 
 | State Key                                                               | Managed By    | Purpose                                |

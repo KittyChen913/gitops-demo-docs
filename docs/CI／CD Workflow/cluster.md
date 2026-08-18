@@ -40,7 +40,6 @@ sidebar_position: 3
 
 為了讓 ArgoCD 有權限對 Kubernetes cluster 們（management cluster、worker cluster）做 GitOps 設定，所以這裡選擇用 ServiceAccount（SA）+ RBAC 的方式給予授權，由 `cluster` 專案創建好，讓 `argocd` 專案讀取。
 
-
 :::note
 實際上 Workflow 還做了很多其他事情，這裡只提核心流程，一些身分驗證、Verify、Health Check 等基本處理就不特別補充了。
 :::

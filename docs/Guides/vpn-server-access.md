@@ -53,7 +53,6 @@ sidebar_position: 4
   style={{ marginBottom: '30px' }}
 />
 
-
 5. 確認設定無誤，記得按 `Save` 保存設定
 
 <img
@@ -202,8 +201,6 @@ sudo journalctl -u dnsmasq -n 200 --no-pager
 # sudo tail -n 200 <log-facility 指定的路徑>
 ```
 
-
-
 ## 離場清理
 
 在 SSH session 內輸入 `exit` 即可登出。
@@ -213,7 +210,3 @@ sudo journalctl -u dnsmasq -n 200 --no-pager
 ````text
 Remove-Item $keyPath
 ````
-
-
-
-

@@ -26,13 +26,11 @@ Linode 的 LKE（Linode 的 Kubernetes）每台 Node 都會自動分配 Public I
 
 雖然 Linode 有 VPC 的功能，但他必須要企業版才能將 LKE 裝進 VPC 中，所以在我的專案中無法這樣用，所以我才會針對那些 LKE 的 Node 特別增設 Firewall 來防止直接暴露在外部。
 
-
 ## NodeBalancer Firewall（1 個）
 
 Linode 的 NodeBalancer 也是會自動分配 Public IP，一樣預設對外開放。
 
 所以對於 ArgoCD 這種內部使用的管理服務，也需要添加一個 Firewall 防止他暴露到外部讓所有人都能看的到。ArgoCD NodeBalancer 的 Firewall 不是完全封住，而是只開放 VPN 訪問，這個在 VPN 章節會再詳細描述。
-
 
 ## OpenVPN Node Firewall（1 個）
 

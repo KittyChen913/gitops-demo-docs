@@ -14,7 +14,6 @@ sidebar_label: "專案介紹"
 - 想看 GitOps／ArgoCD 部署流程：[CI/CD Workflow 總覽](<./CI／CD Workflow/overview.md>)
 - 想直接動手操作：[快速開始 (Quick Start)](./Guides/quick-start.md)
 
-
 :::info
 因長時間部屬雲端資源需不小花費，本專案平時不會保持上線狀態，通常測試完成後就會執行 `terraform destroy` 收回環境。
 :::
