@@ -1,0 +1,24 @@
+name: Build Check
+
+# push 到 master 時自動驗證，但「不部署」。
+# 部署一律由 deploy.yml 手動觸發。
+#
+# 主要價值：docusaurus.config.ts 設定 onBrokenLinks: 'throw'，
+# 任何死連結或型別錯誤在此立刻紅燈，不必等到手動部署時才發現。
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build

@@ -1,0 +1,50 @@
+name: Deploy to GitHub Pages
+
+# 僅限手動觸發：本專案不採用 push 自動部署。
+# 部署時機由人決定 —— Actions 分頁 → 選此 workflow → Run workflow。
+on:
+  workflow_dispatch:
+
+concurrency:                # 避免短時間內重複觸發造成部署競態
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read            # configure-pages 只需讀取 Pages metadata
+    steps:
+      - name: Require master branch
+        if: github.ref != 'refs/heads/master'
+        run: |
+          echo "::error::Deployments are only allowed from master; selected ref was $GITHUB_REF."
+          exit 1
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0    # 讓 Docusaurus 讀得到 git 時間做「最後更新」
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run build
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write       # OIDC，deploy-pages 必需
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
