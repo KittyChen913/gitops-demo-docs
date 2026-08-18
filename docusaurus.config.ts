@@ -25,7 +25,11 @@ const config: Config = {
   organizationName: 'KittyChen913', // Usually your GitHub org/user name.
   projectName: 'gitops-demo-docs', // Usually your repo name.
 
+  // 死連結一律讓建置失敗，由 CI 擋下，不讓壞連結上線。
+  // onBrokenAnchors 預設只有 'warn' —— 標題錨點失效時建置照樣成功、照樣上線，
+  // 而改標題正是最容易讓錨點失效的動作，故一併提升為 'throw'。
   onBrokenLinks: 'throw',
+  onBrokenAnchors: 'throw',
 
   // 站上內容為繁體中文，需正確輸出 <html lang="zh-Hant">，
   // 否則影響 SEO、螢幕閱讀器發音，瀏覽器也會一直跳出翻譯提示。
