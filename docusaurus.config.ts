@@ -42,8 +42,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/KittyChen913/gitops-demo-docs/tree/master/',
+          // 刻意不設 editUrl —— 不提供「編輯此頁」連結。
+          // Docusaurus 只在 editUrl 有值時才渲染該連結，留空即為停用。
         },
         // 註解掉不等於停用，會套用預設值並產生空的 /blog 頁面，需顯式關閉。
         blog: false,
