@@ -11,7 +11,7 @@ sidebar_label: "專案介紹"
 
 - 想先了解專案怎麼拆分：[專案拆分](./repo-split.md)
 - 想知道用了哪些 Cloud 服務：[Cloud 選擇](./cloud.md)
-- 想看 GitOps／ArgoCD 部署流程：[CI/CD Workflow 總覽](<./CI／CD Workflow/overview.md>)
+- 想看 GitOps／ArgoCD 部署流程：[CI/CD Workflow 總覽](./cicd-workflow/overview.md)
 - 想直接動手操作：[快速開始 (Quick Start)](./Guides/quick-start.md)
 
 :::info
