@@ -1,6 +1,6 @@
 # GitOps Demo 跨 Repository 架構文件
 
-這不是單一專案的 README，而是 GitOps Demo 多個 Repository 的整體架構與操作入口。此處集中說明各專案的 ownership、跨 Repository 契約、部署順序、Cloud 與網路設計、CI/CD 流程，以及日常操作方式。
+本專案使用 Docusaurus 建置 GitOps Demo 的跨 Repository 文件網站，集中說明各專案的整體架構、部署流程與操作方式。
 
 - 文件網站：<https://kittychen913.github.io/gitops-demo-docs/>
 - 預設分支：`master`
@@ -10,11 +10,12 @@
 
 本文件 Repository 串連以下實作 Repository：
 
+- [`gitops-demo-openvpn-dns`](https://github.com/KittyChen913/gitops-demo-openvpn-dns)：Shared OpenVPN、DNS、route、NAT 與 network access contract。
 - [`gitops-demo-cluster`](https://github.com/KittyChen913/gitops-demo-cluster)：S3 State Bucket、LKE、Worker Firewall、ArgoCD SA/RBAC/token。
 - [`gitops-demo-argocd`](https://github.com/KittyChen913/gitops-demo-argocd)：ArgoCD 安裝、自我管理、Cluster registration 與 private endpoint。
-- [`gitops-demo-openvpn-dns`](https://github.com/KittyChen913/gitops-demo-openvpn-dns)：Shared OpenVPN、DNS、route、NAT 與 network access contract。
 - [`gitops-demo-apps`](https://github.com/KittyChen913/gitops-demo-apps)：Kubernetes manifests、Kustomize overlays 與 ApplicationSet。
-- [`gitops-demo-backend`](https://github.com/KittyChen913/gitops-demo-backend)、[`gitops-demo-frontend`](https://github.com/KittyChen913/gitops-demo-frontend)：application source 與 image build。
+- [`gitops-demo-backend`](https://github.com/KittyChen913/gitops-demo-backend)：Go API 與 backend image build。
+- [`gitops-demo-frontend`](https://github.com/KittyChen913/gitops-demo-frontend)：React／Nginx UI 與 frontend image build。
 
 ## 目錄結構
 
